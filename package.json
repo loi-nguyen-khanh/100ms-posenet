@@ -7,6 +7,9 @@
   "dependencies": {
     "@100mslive/react-sdk": "^0.0.6",
     "@openreplay/tracker": "^3.5.0",
+    "@tensorflow-models/posenet": "^2.2.2",
+    "@tensorflow/tfjs": "^4.10.0",
+    "posenet-similarity": "^0.4.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "4.0.0"

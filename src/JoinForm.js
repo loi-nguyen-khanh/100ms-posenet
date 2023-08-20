@@ -8,7 +8,7 @@ function Join() {
   const hmsActions = useHMSActions();
   const [inputValues, setInputValues] = useState({
     name: "",
-    token: "",
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoyLCJ0eXBlIjoiYXBwIiwiYXBwX2RhdGEiOm51bGwsImFjY2Vzc19rZXkiOiI2NGRmNzU0Mzk1ZjE5NGQ1ZTUwOTg2ZWMiLCJyb2xlIjoiZ3Vlc3QiLCJyb29tX2lkIjoiNjRkZjc1ZTJlYTY0YmFjNDljOTg4N2FmIiwidXNlcl9pZCI6ImUxNDRhMWMzLWVkNmEtNDQ1NS04YTI0LWMzZjc4MzE3N2M4YyIsImV4cCI6MTY5MjYyODAzMiwianRpIjoiNzA0MzE2YmItNmY3OS00ZWFkLWFlNTYtYjUyNmJkZDM4ZDA1IiwiaWF0IjoxNjkyNTQxNjMyLCJpc3MiOiI2NGRmNzU0Mzk1ZjE5NGQ1ZTUwOTg2ZWEiLCJuYmYiOjE2OTI1NDE2MzIsInN1YiI6ImFwaSJ9.v1saS86uJlxBTXM4KLKtYyFupEjjQl7suVM6H_58Hp0",
   });
 
   const handleInputChange = (e) => {
@@ -49,7 +49,7 @@ function Join() {
           placeholder="Your name"
         />
       </div>
-      <div className="input-container">
+      {/* <div className="input-container">
         <input
           value={inputValues.token}
           onChange={handleInputChange}
@@ -58,7 +58,7 @@ function Join() {
           name="token"
           placeholder="Auth token(or join the public room)"
         />
-      </div>
+      </div> */}
       <button className="btn-primary" onClick={() => handleSubmit()}>
         Join
       </button>

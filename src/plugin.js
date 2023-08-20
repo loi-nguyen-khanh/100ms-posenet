@@ -1,4 +1,5 @@
 import { GrayscalePlugin } from "./plugins/grayscalePlugin";
+import { PoseDetectionPlugin } from "./plugins/poseDetectionPlugin";
 import {
   selectIsLocalVideoPluginPresent,
   useHMSActions,
@@ -6,7 +7,7 @@ import {
 } from "@100mslive/react-sdk";
 import React from "react";
 
-export const grayScalePlugin = new GrayscalePlugin();
+export const grayScalePlugin = new PoseDetectionPlugin();
 export function PluginButton({ plugin, name }) {
   const isPluginAdded = useHMSStore(
     selectIsLocalVideoPluginPresent(plugin.getName())

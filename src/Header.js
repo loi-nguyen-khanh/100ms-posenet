@@ -15,13 +15,14 @@ function Header() {
     <header>
       <img
         className="logo"
-        src="https://ashwins93.app.100ms.live/static/media/100ms_logo.3cfd8818.svg"
+        src="https://www.flexifyme.com/images/white-logo.svg"
+        width={120}
         alt="logo"
       />
       {isConnected && (
         <div>
           <UpdateCamera />
-          <PluginButton plugin={grayScalePlugin} name={"Grayscale"} />
+          <PluginButton plugin={grayScalePlugin} name={"Pose Detection"} />
           <button
             id="leave-btn"
             className="btn btn-danger"
