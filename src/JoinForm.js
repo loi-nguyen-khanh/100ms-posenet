@@ -8,7 +8,7 @@ function Join() {
   const hmsActions = useHMSActions();
   const [inputValues, setInputValues] = useState({
     name: "",
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoyLCJ0eXBlIjoiYXBwIiwiYXBwX2RhdGEiOm51bGwsImFjY2Vzc19rZXkiOiI2NGRmNzU0Mzk1ZjE5NGQ1ZTUwOTg2ZWMiLCJyb2xlIjoiZ3Vlc3QiLCJyb29tX2lkIjoiNjRkZjc1ZTJlYTY0YmFjNDljOTg4N2FmIiwidXNlcl9pZCI6ImEzMzMyMzJjLTgyNGQtNDNhMS05ZWY1LTJjY2JmM2RhYTBlNyIsImV4cCI6MTY5Mjc2MTM3NywianRpIjoiYjNjMThjYzctMDUxMy00NjkzLWFjMjAtOTNkNTI2YjFiNjVjIiwiaWF0IjoxNjkyNjc0OTc3LCJpc3MiOiI2NGRmNzU0Mzk1ZjE5NGQ1ZTUwOTg2ZWEiLCJuYmYiOjE2OTI2NzQ5NzcsInN1YiI6ImFwaSJ9.-Ohgt_hjW3J8TahWIPfwB6tMz5I9ODXXrNPdmtIT0fk",
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoyLCJ0eXBlIjoiYXBwIiwiYXBwX2RhdGEiOm51bGwsImFjY2Vzc19rZXkiOiI2NGRmNzU0Mzk1ZjE5NGQ1ZTUwOTg2ZWMiLCJyb2xlIjoiZ3Vlc3QiLCJyb29tX2lkIjoiNjRkZjc1ZTJlYTY0YmFjNDljOTg4N2FmIiwidXNlcl9pZCI6Ijk4YjkwYjM4LWVjNDItNDAyYS05YzJhLTljNTQyMWRkZjU1MSIsImV4cCI6MTY5MjgwMDUzMCwianRpIjoiZDNhY2Y2OGQtYWM4ZS00OWZjLWE0YTctMTY5ODUzNjJlZDMxIiwiaWF0IjoxNjkyNzE0MTMwLCJpc3MiOiI2NGRmNzU0Mzk1ZjE5NGQ1ZTUwOTg2ZWEiLCJuYmYiOjE2OTI3MTQxMzAsInN1YiI6ImFwaSJ9.HcVxu1AsOR07W-v3qosCv-b_mMI6lSIvcsGFyle3ZdI",
   });
 
   const handleInputChange = (e) => {
@@ -49,7 +49,7 @@ function Join() {
           placeholder="Your name"
         />
       </div>
-      {/* <div className="input-container">
+      <div className="input-container">
         <input
           value={inputValues.token}
           onChange={handleInputChange}
@@ -58,7 +58,7 @@ function Join() {
           name="token"
           placeholder="Auth token(or join the public room)"
         />
-      </div> */}
+      </div>
       <button className="btn-primary" onClick={() => handleSubmit()}>
         Join
       </button>
