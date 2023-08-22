@@ -1519,6 +1519,16 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@mediapipe/pose@^0.5.1675469404":
+  version "0.5.1675469404"
+  resolved "https://registry.yarnpkg.com/@mediapipe/pose/-/pose-0.5.1675469404.tgz#8f81e64c6561b2357a021a134b54de0204bafc72"
+  integrity sha512-DFZsNWTsSphRIZppnUCuunzBiHP2FdJXR9ehc7mMi4KG+oPaOH0Em3d6kr7Py+TSyTXC1doH88KcF28k2sBxsQ==
+
+"@mediapipe/tasks-vision@^0.10.3":
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/@mediapipe/tasks-vision/-/tasks-vision-0.10.3.tgz#d1465126923df8f03b4a31a231867d284e120961"
+  integrity sha512-q6yPXKGlANzLUc77X1zN+AKLFTiviCYtRXv5SV27GnbUVw0lsy94ybBmsxIMa+pATWIi0GmmtENJt3k0BAQheA==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1728,6 +1738,14 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
+"@tensorflow-models/pose-detection@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@tensorflow-models/pose-detection/-/pose-detection-2.1.0.tgz#733ce55dfe4a75d40cb04935e461beacac2e8e4d"
+  integrity sha512-4WOgxiPuA1ymZff9Epez2GsC0FSv7Fj8olu5LzXB/JAYo/zgyu2PFOQFeDXvvqyXwxdB4IrYYsgerUqlZaGdSQ==
+  dependencies:
+    rimraf "^3.0.2"
+    tslib "2.4.0"
+
 "@tensorflow-models/posenet@^2.2.2":
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/@tensorflow-models/posenet/-/posenet-2.2.2.tgz#2abcfa33b43892135d232c9c4408a38cc8f74ba6"
@@ -1740,6 +1758,14 @@
   dependencies:
     "@types/seedrandom" "^2.4.28"
     seedrandom "^3.0.5"
+
+"@tensorflow/tfjs-backend-wasm@^4.10.0":
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/@tensorflow/tfjs-backend-wasm/-/tfjs-backend-wasm-4.10.0.tgz#af72c7c5f1bf681e72fd1b29f22a229de4a2d2a4"
+  integrity sha512-lmlXycPstuyRl7HSGanfGuw329sbout90cN4EJnVgx1ZWsLuWIbPfpLPU18bdXGuK/4T4c2bBH5fXMyfdjVIBg==
+  dependencies:
+    "@tensorflow/tfjs-backend-cpu" "4.10.0"
+    "@types/emscripten" "~0.0.34"
 
 "@tensorflow/tfjs-backend-webgl@4.10.0":
   version "4.10.0"
@@ -1837,6 +1863,11 @@
   integrity sha512-K2waXdXBi2302XUdcHcR1jCeU0LL4TD9HRs/gk0N2Xvrht+G/BfJa4QObBQZfhMdxiCpV3COl5Nfq4uKTeTnJA==
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/emscripten@~0.0.34":
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/@types/emscripten/-/emscripten-0.0.34.tgz#12b4a344274fb102ff2f6c877b37587bc3e46008"
+  integrity sha512-QSb9ojDincskc+uKMI0KXp8e1NALFINCrMlp8VGKGcTSxeEyRTTKyjWw75NYrCZHUsVEEEpr1tYHpbtaC++/sQ==
 
 "@types/eslint@^7.2.6":
   version "7.28.2"
@@ -9735,6 +9766,13 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
+scatter-gl@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/scatter-gl/-/scatter-gl-0.0.13.tgz#7bc3ded68ef726fe581529efbeb4beddf0a92c8f"
+  integrity sha512-304ftr2ND7RSZ5tmnnPNEGc6D9DH+xSP5OJU6DrwvDLA19We8icrVWmdpJbORC9hh0cZ/gYsn+/6H+WONdUGeQ==
+  dependencies:
+    three "0.125"
+
 scheduler@^0.20.2:
   version "0.20.2"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
@@ -10586,6 +10624,11 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+three@0.125:
+  version "0.125.2"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.125.2.tgz#dcba12749a2eb41522e15212b919cd3fbf729b12"
+  integrity sha512-7rIRO23jVKWcAPFdW/HREU2NZMGWPBZ4XwEMt0Ak0jwLUKVJhcKM55eCBWyGZq/KiQbeo1IeuAoo/9l2dzhTXA==
+
 throat@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
@@ -10708,6 +10751,11 @@ tsconfig-paths@^3.11.0:
     json5 "^1.0.1"
     minimist "^1.2.0"
     strip-bom "^3.0.0"
+
+tslib@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tslib@^1.8.1:
   version "1.14.1"

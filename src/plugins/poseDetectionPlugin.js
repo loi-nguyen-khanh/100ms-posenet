@@ -19,7 +19,13 @@ import { HMSVideoPluginType } from "@100mslive/hms-video";
 import * as posenet from "@tensorflow-models/posenet";
 import * as tf from "@tensorflow/tfjs";
 import { load } from "@tensorflow-models/posenet";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import {
+  PoseLandmarker,
+  FilesetResolver,
+  DrawingUtils
+} from "@mediapipe/tasks-vision"; // Update the correct import path
+import { RendererCanvas2d } from "./rendererCanvas2d";
 
 const color = "white";
 const boundingBoxColor = "red";
@@ -253,16 +259,25 @@ function drawPoints(ctx, points, radius, color) {
 // }
 
 
+
+
 export class PoseDetectionPlugin {
+  poseLandmarker = null;
   getName() {
     return "pose-detection-plugin";
+  }
+
+  setPoseLandmarker(modelInstance){
+    this.poseLandmarker = modelInstance;
   }
 
   isSupported() {
     return true;
   }
 
-  async init() {}
+  async init() {
+    // this.renderer = new RendererCanvas2d(canvas);
+  }
 
   getPluginType() {
     return HMSVideoPluginType.TRANSFORM;
@@ -278,13 +293,14 @@ export class PoseDetectionPlugin {
   async processVideoFrame(input, output) {
     const width = input.width;
     const height = input.height;
-    const net = await load({
-        inputResolution: { width: width, height: height },
-        scale: 0.8,
-    });
-    const pose = await net.estimateSinglePose(input, {
-        flipHorizontal: false,
-      });
+    // const net = await load({
+    //     inputResolution: { width: width, height: height },
+    //     scale: 0.8,
+    // });
+    // const pose = await net.estimateSinglePose(input, {
+    //     flipHorizontal: false,
+    //   });
+    // console.log("pose2", pose)
 
     output.width = width;
     output.height = height;
@@ -301,9 +317,48 @@ export class PoseDetectionPlugin {
     //   pixels[i] = pixels[i + 1] = pixels[i + 2] = lightness;
     // }
     outputCtx.putImageData(imgData, 0, 0);
-    if (pose) drawCanvas(pose, outputCtx);
+    const drawingUtils = new DrawingUtils(outputCtx);
+    // if (pose) drawCanvas(pose, outputCtx);
+    (await this.poseLandmarker).estimatePoses(
+      input,
+      {maxPoses: 1, flipHorizontal: false}).then((result) => {
+        console.log("===", result);
+        const renderer = new RendererCanvas2d(output);
+        const rendererParams = [input, result, false];
+        renderer.draw(rendererParams);
+
+      })
+
+    // this.poseLandmarker.detect(input, (result) => {
+    //   console.log("pose", result);
+    //   console.log("utils", drawingUtils);
+    //   for (const landmark of result.landmarks) {
+    //     drawingUtils.drawLandmarks(landmark, {
+    //       radius: (data) => {
+    //         if (data.from)
+    //           DrawingUtils.lerp(data.from.z, -0.15, 0.1, 5, 1)
+    //       }
+    //     });
+    //     drawingUtils.drawConnectors(landmark, PoseLandmarker.POSE_CONNECTIONS);
+    //   }
+    // })
   }
 }
+
+const createPoseLandmarker = async () => {
+  const vision = await FilesetResolver.forVisionTasks(
+    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
+  );
+  poseLandmarker = await PoseLandmarker.createFromOptions(vision, {
+    baseOptions: {
+      modelAssetPath: `https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task`,
+      delegate: "GPU"
+    },
+    runningMode: runningMode,
+    numPoses: 2
+  });
+};
+
 
 const drawCanvas = (pose, ctx) => {
     drawKeypoints(pose["keypoints"], 0.5, ctx);
